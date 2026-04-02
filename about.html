@@ -252,20 +252,65 @@
     }
 
     /* ===== GLOBAL PRESENCE MAP ===== */
-    .map-section {
-      margin: 60px 0;
+    .locations-section {
+      background: #0e3d2e;
+      padding: 80px 0;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .locations-text .section-eyebrow { color: #8BC342; }
+    .locations-text h2 { color: #fff; margin-bottom: 2rem; }
+
+    .location-block { margin-bottom: 2rem; }
+    .location-block h3 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #8BC342;
+      margin-bottom: .2rem;
+    }
+    .location-block h4 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .4rem;
+    }
+    .location-block p,
+    .location-block li {
+      color: rgba(255,255,255,.7);
+      font-size: .9375rem;
+      line-height: 1.6;
+    }
+    .location-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .location-block ul li::before {
+      content: '▪ ';
+      color: #8BC342;
+      font-weight: bold;
     }
 
     .map-container {
       border-radius: 12px;
       overflow: hidden;
-      background: #f0f0f0;
     }
 
     .map-img {
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    @media (max-width: 900px) {
+      .locations-grid { grid-template-columns: 1fr; }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -569,22 +614,53 @@
   </section>
 
   <!-- ===== GLOBAL PRESENCE ===== -->
-  <section class="about-section bg-light">
+  <section class="locations-section">
     <div class="container">
-      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-        <span class="section-eyebrow">Global Reach</span>
-        <h2 class="section-title">Our Global Manufacturing Network</h2>
-        <p class="section-desc">Strategic manufacturing locations across the US and Asia provide Gii with the scale and flexibility to support OEMs of any size.</p>
-      </div>
+      <div class="locations-grid">
 
-      <div class="map-section">
+        <!-- Left: location details -->
+        <div class="locations-text">
+          <span class="section-eyebrow">Global Reach</span>
+          <h2 class="section-title">Locations</h2>
+
+          <div class="location-block">
+            <h3>Corporate Headquarters:</h3>
+            <h4>Massachusetts, USA</h4>
+            <p>Global Interconnect, Inc.<br />
+               11 Jonathan Bourne Drive<br />
+               Pocasset, MA 02559 USA</p>
+          </div>
+
+          <div class="location-block">
+            <h3>Asia Headquarters:</h3>
+            <h4>Tsuen Wan, Hong Kong</h4>
+            <p>Global Interconnect, Inc.<br />
+               #2103, Fortune Commercial Bldg<br />
+               362 Sha Tsui Road, Tsuen Wan<br />
+               M.T. 999077 Hong Kong</p>
+          </div>
+
+          <div class="location-block">
+            <h3>Office and Manufacturing Locations:</h3>
+            <ul>
+              <li>Jacksonville, Florida, USA</li>
+              <li>Humen, China</li>
+            </ul>
+          </div>
+
+          <div class="location-block">
+            <h3>Warehousing Locations:</h3>
+            <ul>
+              <li>St. Louis, Missouri</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: map -->
         <div class="map-container">
           <img src="assets/images/map.png" alt="Gii Global Manufacturing Network" class="map-img" />
         </div>
-      </div>
 
-      <div style="margin-top: 50px; text-align: center;">
-        <p style="font-size: 1.1rem; color: #333; max-width: 700px; margin: 0 auto;">Our headquarters in Pocasset, Massachusetts serves as the hub for our US operations, engineering, and business development — while our Asia-based facilities provide exceptional manufacturing capacity and supply chain flexibility.</p>
       </div>
     </div>
   </section>
