@@ -71,9 +71,14 @@
     /* ===== LEADERSHIP TEAM GRID ===== */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       margin: 60px 0;
+    }
+
+    /* Center the lone last card (Sarah) */
+    .team-grid .team-card:last-child:nth-child(3n + 1) {
+      grid-column: 2 / 3;
     }
 
     .team-card {
@@ -410,31 +415,52 @@
       </div>
 
       <div class="team-grid">
+
+        <!-- Row 1 -->
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="assets/images/team/stephen-bates.jpg" alt="Stephen Bates, Founder" />
+          </div>
+          <h3>Stephen Bates</h3>
+          <p class="title">Founder</p>
+          <p class="bio">Founded Global Interconnect in 1995 after building a career in finance, sales, and operations in the interconnect industry. A Babson College graduate, Stephen's vision established Gii as a trusted partner to the world's leading medical device OEMs.</p>
+        </div>
+
         <div class="team-card">
           <div class="team-card-img">
             <img src="assets/images/team/todd-squire.jpg" alt="Todd Squire, President" />
           </div>
           <h3>Todd Squire</h3>
           <p class="title">President</p>
-          <p class="bio">Joined Gii in 2004 as Senior Account Executive. Brings extensive customer relationship and business development expertise to lead the company's strategic growth.</p>
+          <p class="bio">Joined Gii in 2004 as Senior Account Executive. Todd's deep expertise in customer relationships and business development has driven Gii's strategic growth into a global contract manufacturing leader.</p>
         </div>
 
         <div class="team-card">
           <div class="team-card-img">
-            <img src="assets/images/team/stephen-bates.png" alt="Stephen Bates" />
+            <img src="assets/images/team/robert-gray.jpg" alt="Robert Gray, Chief Technical Officer" />
           </div>
-          <h3>Stephen Bates</h3>
-          <p class="title">Vice President of Engineering</p>
-          <p class="bio">Leading our technical innovation and product development initiatives across all manufacturing disciplines.</p>
+          <h3>Robert Gray</h3>
+          <p class="title">Chief Technical Officer</p>
+          <p class="bio">Gii's longest-serving team member, Bob started as Engineering Manager and grew into the CTO role. His deep technical knowledge of electromechanical systems underpins every engineering decision Gii makes.</p>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="assets/images/team/chet-potter.jpg" alt="Chet Potter, VP Engineering &amp; R&amp;D" />
+          </div>
+          <h3>Chet Potter</h3>
+          <p class="title">VP of Engineering &amp; R&amp;D</p>
+          <p class="bio">Joined Gii in 2013 as a Quality Engineer and rose to VP of Engineering and R&D. Chet leads Gii's product development, design-for-manufacture initiatives, and continuous engineering innovation.</p>
         </div>
 
         <div class="team-card">
           <div class="team-card-img">
-            <img src="assets/images/team/kyle-kruse.png" alt="Kyle Kruse" />
+            <img src="assets/images/team/scott-burns.webp" alt="Scott Burns, VP of Sales" />
           </div>
-          <h3>Kyle Kruse</h3>
-          <p class="title">Vice President of Manufacturing</p>
-          <p class="bio">Overseeing operations and continuous improvement across our US-Asia manufacturing network.</p>
+          <h3>Scott Burns</h3>
+          <p class="title">VP of Sales</p>
+          <p class="bio">Scott drives Gii's business development strategy and manages key OEM relationships. His technical background and commercial acumen help customers find the right manufacturing solution for every program.</p>
         </div>
 
         <div class="team-card">
@@ -443,44 +469,47 @@
           </div>
           <h3>Jacqueline Christensen</h3>
           <p class="title">Director of Finance</p>
-          <p class="bio">Joined Gii in 2005. Manages financial strategy and operational efficiency for sustainable growth.</p>
+          <p class="bio">Joined Gii in 2005 as Accounting and Administrative Coordinator. Jacqueline manages Gii's financial strategy and operational efficiency, ensuring the company's sustainable growth and fiscal health.</p>
         </div>
 
+        <!-- Row 3 -->
         <div class="team-card">
           <div class="team-card-img">
             <img src="assets/images/team/troy-mauk.jpg" alt="Troy Mauk, Director of Global Procurement" />
           </div>
           <h3>Troy Mauk</h3>
           <p class="title">Director of Global Procurement</p>
-          <p class="bio">Joined Gii in 2007. Leads supply chain strategy and supplier partnerships across our global network.</p>
+          <p class="bio">Joined Gii in 2007 as Purchasing Manager. Troy oversees Gii's global supply chain strategy, supplier partnerships, and procurement operations across the US-Asia manufacturing network.</p>
         </div>
 
         <div class="team-card">
           <div class="team-card-img">
-            <img src="assets/images/team/robert-gray.png" alt="Robert E. Gray" />
+            <img src="assets/images/team/jonathan-goodwin.jpg" alt="Jonathan Goodwin, Director of Engineering" />
           </div>
-          <h3>Robert E. Gray</h3>
-          <p class="title">Director of Quality &amp; Compliance</p>
-          <p class="bio">Ensures our manufacturing standards exceed regulatory requirements and customer expectations.</p>
+          <h3>Jonathan Goodwin</h3>
+          <p class="title">Director of Engineering</p>
+          <p class="bio">With over 35 years of electro-mechanical development and manufacturing engineering experience, Jonathan leads Gii's engineering team in delivering precision solutions for the most demanding medical device applications.</p>
         </div>
 
         <div class="team-card">
           <div class="team-card-img">
-            <img src="assets/images/team/scott-burns.png" alt="Scott Burns" />
+            <img src="assets/images/team/mike.jpg" alt="Mike, Director of Project Engineering" />
           </div>
-          <h3>Scott Burns</h3>
-          <p class="title">Director of Operations</p>
-          <p class="bio">Driving operational excellence and process optimization across all manufacturing facilities.</p>
+          <h3>Mike</h3>
+          <p class="title">Director of Project Engineering</p>
+          <p class="bio">Joined Gii in 2014 as a Quality Engineer after a career in commercial HVAC engineering. Mike ensures project teams execute within scope and customer expectations, while continuously improving Gii's project processes and workflows.</p>
         </div>
 
+        <!-- Row 4 -->
         <div class="team-card">
           <div class="team-card-img">
-            <img src="assets/images/team/cheryl-shaw.png" alt="Cheryl Shaw" />
+            <img src="assets/images/team/sarah-nugent.jpg" alt="Sarah Nugent, Director of Quality" />
           </div>
-          <h3>Cheryl Shaw</h3>
-          <p class="title">Director of Customer Success</p>
-          <p class="bio">Building and maintaining strong partnerships with our OEM customers worldwide.</p>
+          <h3>Sarah Nugent</h3>
+          <p class="title">Director of Quality</p>
+          <p class="bio">Sarah leads Gii's quality management system, ensuring every product meets FDA, ISO 13485, and customer-specific requirements. Her team maintains the zero-defect culture that defines Gii's reputation in medical device manufacturing.</p>
         </div>
+
       </div>
     </div>
   </section>
