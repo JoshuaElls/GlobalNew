@@ -628,18 +628,95 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* =========================================
-   GLOBAL REACH
+   GLOBAL REACH / LOCATIONS
    ========================================= */
 
-.map-container {
+.locations-section {
+  position: relative;
+  background: #0b2e1a;
   overflow: hidden;
-  border-radius: var(--radius-xl);
+  padding: 80px 0 60px;
 }
-.map-img {
+
+/* Full-bleed map behind everything */
+.map-bg-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-bg-img {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-xl);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.18;
+  /* Tint land masses to match brand palette */
+  filter: invert(1) sepia(1) saturate(2) hue-rotate(70deg);
+}
+
+/* Content layer sits above the map */
+.locations-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.locations-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.locations-header .section-eyebrow {
+  color: var(--green-accent);
+}
+.locations-header .section-title {
+  color: #ffffff;
+}
+
+/* 4-column card row */
+.locations-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.loc-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(139, 195, 66, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  backdrop-filter: blur(4px);
+}
+.loc-card-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+  margin-bottom: 8px;
+}
+.loc-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.loc-card p {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .locations-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .locations-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================
