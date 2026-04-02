@@ -632,17 +632,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ========================================= */
 
 .map-container {
-  background: var(--white);
-  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-200);
-  padding: 1.5rem;
+  border-radius: var(--radius-xl);
 }
 .map-img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
+  display: block;
+  border-radius: var(--radius-xl);
 }
 
 /* =========================================
