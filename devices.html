@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Gii's custom medical device assemblies, connectors, and cable solutions engineered to zero-failure standards. Custom RF ablation assemblies, scopes, probes, and more." />
+  <title>Devices & Products | Global Interconnect, Inc.</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== DEVICES PAGE STYLES ===== */
+
+    .devices-banner {
+      background: linear-gradient(135deg, #1a4d3e 0%, #0f3d31 100%);
+      background-image: linear-gradient(135deg, rgba(26, 77, 62, 0.85) 0%, rgba(15, 61, 49, 0.85) 100%),
+                        url('assets/images/products/connector.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .devices-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .devices-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .devices-banner h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .devices-banner p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      opacity: 0.95;
+      margin: 0;
+    }
+
+    /* ===== INTRO SECTION ===== */
+    .devices-intro {
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .devices-intro-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .devices-intro-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .devices-intro-text p {
+      margin-bottom: 20px;
+    }
+
+    .devices-intro-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-highlight {
+      display: inline-block;
+      color: #1a4d3e;
+      font-weight: 600;
+    }
+
+    /* ===== DEVICES GRID ===== */
+    .devices-section {
+      padding: 80px 20px;
+      background: #f9fafb;
+    }
+
+    .devices-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1a4d3e;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== DEVICE CARDS ===== */
+    .devices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .device-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .device-card:hover {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+
+    .device-card-img {
+      width: 100%;
+      height: 240px;
+      background: #f0f0f0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .device-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .device-card-body {
+      padding: 28px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .device-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+
+    .device-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+      flex: 1;
+    }
+
+    /* ===== DEVICE FEATURES (sub-items) ===== */
+    .device-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid #e5e5e5;
+    }
+
+    .feature-badge {
+      background: white;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #1a4d3e;
+      font-weight: 500;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    /* ===== COMPARISON SECTION ===== */
+    .comparison-section {
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .comparison-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .comparison-table th {
+      background: #1a4d3e;
+      color: white;
+      padding: 20px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .comparison-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:nth-child(odd) {
+      background: #f9fafb;
+    }
+
+    .comparison-table .feature-label {
+      font-weight: 600;
+      color: #1a1a1a;
+      width: 35%;
+    }
+
+    .comparison-table .custom-col {
+      color: #1a4d3e;
+      font-weight: 500;
+    }
+
+    .comparison-table .ots-col {
+      color: #666;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #1a4d3e 0%, #0f3d31 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      line-height: 1.6;
+    }
+
+    .cta-section .btn {
+      background: white;
+      color: #1a4d3e;
+      font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .cta-section .btn:hover {
+      background: #f0f0f0;
+      transform: scale(1.05);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .devices-banner {
+        padding: 80px 20px;
+      }
+
+      .devices-banner h1 {
+        font-size: 2rem;
+      }
+
+      .devices-banner p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .devices-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table .feature-label {
+        width: 100%;
+      }
+
+      .comparison-table th {
+        font-size: 0.9rem;
+      }
+
+      .cta-section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logos/logo-white.svg" alt="Global Interconnect, Inc." class="logo-img" />
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="devices.html" class="active">Devices</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Get In Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== PAGE BANNER ===== -->
+  <section class="devices-banner">
+    <div class="devices-banner-content">
+      <h1>Devices & Products</h1>
+      <p>Custom-Engineered Solutions for the World's Most Critical Medical Devices</p>
+    </div>
+  </section>
+
+  <!-- ===== INTRO ===== -->
+  <section class="devices-intro">
+    <div class="devices-intro-container">
+      <div class="devices-intro-text">
+        <p>
+          Global Interconnect manufactures precision assemblies that connect medical devices or industrial consoles to surgical handpieces, measurement devices, and diagnostic imaging systems. When off-the-shelf connector configurations don't exist — or won't meet your performance requirements — Gii designs and engineers custom solutions from the ground up.
+        </p>
+        <p>
+          <span class="intro-highlight">Every product is built to zero-failure standards.</span> Our connectors, cable assemblies, and specialized electromechanical components undergo rigorous testing and validation to ensure they perform flawlessly in the most demanding clinical environments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEVICES SHOWCASE ===== -->
+  <section class="devices-section">
+    <div class="devices-container">
+      <div class="section-header">
+        <span class="section-eyebrow">Product Categories</span>
+        <h2 class="section-title">Custom-Engineered Device Solutions</h2>
+        <p class="section-desc">A complete portfolio of connectors, cable assemblies, and specialized medical device components — engineered for your exact specifications.</p>
+      </div>
+
+      <!-- DEVICE CATEGORY 1: CUSTOM MEDICAL CONNECTORS -->
+      <div style="margin-bottom: 60px;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Custom Medical Connectors
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/nonlocking-connector.png" alt="Non-Locking Connectors" />
+            </div>
+            <div class="device-card-body">
+              <h3>Non-Locking Connectors</h3>
+              <p>Push-pull style connectors with quick-connect/disconnect capability. Ideal for applications requiring frequent connect cycles with minimal force requirements.</p>
+            </div>
+          </div>
+
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/locking-connector.png" alt="Locking Connectors" />
+            </div>
+            <div class="device-card-body">
+              <h3>Locking Connectors</h3>
+              <p>Bayonet and screw-locking designs engineered for secure, vibration-resistant connections. Prevents accidental disconnection in critical surgical applications.</p>
+            </div>
+          </div>
+
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/purpose-built-connector.png" alt="Purpose-Built Connectors" />
+            </div>
+            <div class="device-card-body">
+              <h3>Purpose-Built Connectors</h3>
+              <p>Custom overmolded designs built for unique form factors and electrical requirements. Compatible with LEMO/Fischer standards or fully proprietary architectures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Connector housings overmolded with precision contacts</div>
+          <div class="feature-badge">1–30+ contacts per connector design</div>
+          <div class="feature-badge">Push-pull, bayonet, and screw-locking styles</div>
+          <div class="feature-badge">LEMO/Fischer compatible or fully custom</div>
+          <div class="feature-badge">Biocompatible materials and finishes</div>
+          <div class="feature-badge">Single-use and reusable options</div>
+        </div>
+      </div>
+
+      <!-- DEVICE CATEGORY 2: RF ABLATION ASSEMBLIES -->
+      <div style="margin-bottom: 60px;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          RF Ablation Assemblies
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/rf-ablation.jpg" alt="RF Ablation Assemblies" />
+            </div>
+            <div class="device-card-body">
+              <h3>High-Voltage RF Connector Systems</h3>
+              <p>Complete radiofrequency ablation assemblies engineered for pain management, cardiac ablation, and surgical cutting. IEC 60601 compliant high-voltage rated designs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Overmolded banana plug configurations (lowest cost)</div>
+          <div class="feature-badge">Push-pull style RF connectors with 1–30+ contacts</div>
+          <div class="feature-badge">Single-use breakaway connectors for pain management probes</div>
+          <div class="feature-badge">High-voltage rated; meets IEC 60601 requirements</div>
+          <div class="feature-badge">Low-leakage insulation for RF delivery</div>
+          <div class="feature-badge">100% electrical test before shipment</div>
+        </div>
+      </div>
+
+      <!-- DEVICE CATEGORY 3: SCOPES, PROBES & CATHETERS -->
+      <div style="margin-bottom: 60px;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Scopes, Probes & Catheters
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/probe.png" alt="Scopes and Probes" />
+            </div>
+            <div class="device-card-body">
+              <h3>Endoscopy & Visualization Systems</h3>
+              <p>Custom cable assemblies engineered for colonoscopes, laparoscopes, and endoscopes. Signal-integrity-focused designs for high-resolution imaging delivery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Custom cable assemblies for endoscopes, colonoscopes, laparoscopes</div>
+          <div class="feature-badge">Ultrasound probes and imaging cables with signal integrity focus</div>
+          <div class="feature-badge">Catheter assemblies with flush ports and multi-lumen tubing</div>
+          <div class="feature-badge">RF and microwave delivery for thermal treatment</div>
+          <div class="feature-badge">Flexible tubing rated for sterilization cycles</div>
+          <div class="feature-badge">Shielded designs for EMI/RFI protection</div>
+        </div>
+      </div>
+
+      <!-- DEVICE CATEGORY 4: PAIN MANAGEMENT DEVICES -->
+      <div style="margin-bottom: 60px;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 5.64 3.582 10.2 8 10.2s8-4.56 8-10.2c0-3.32-2.67-7.25-8-11.8z"/></svg>
+          Pain Management Devices
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/pain-management.png" alt="Pain Management Assembly" />
+            </div>
+            <div class="device-card-body">
+              <h3>RF Pain Management Assemblies</h3>
+              <p>Specialized single-use assemblies for radiofrequency pain relief procedures. Breakaway connector designs engineered for operator safety and precision delivery.</p>
+            </div>
+          </div>
+
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/rf-pain-probe.png" alt="RF Pain Probe" />
+            </div>
+            <div class="device-card-body">
+              <h3>Single-Use RF Probes</h3>
+              <p>Purpose-built radiofrequency ablation probes for interventional pain management. High-voltage rated with integrated sterilization-compatible packaging.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Single-use radiofrequency ablation pain management probes</div>
+          <div class="feature-badge">Purpose-built breakaway connectors</div>
+          <div class="feature-badge">Sterilization-compatible packaging integration</div>
+          <div class="feature-badge">High-voltage insulation for safe RF delivery</div>
+          <div class="feature-badge">Precision contact alignment for consistent performance</div>
+        </div>
+      </div>
+
+      <!-- DEVICE CATEGORY 5: UROLOGY & ENDOSCOPY -->
+      <div style="margin-bottom: 60px;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Urology & Endoscopy
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/devices/urology.jpg" alt="Urology Devices" />
+            </div>
+            <div class="device-card-body">
+              <h3>Stone Management & Irrigation</h3>
+              <p>Custom connector and tubing assemblies for kidney stone management devices. Precision irrigation and aspiration systems with integrated flow control.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Stone management device assemblies</div>
+          <div class="feature-badge">Irrigation and aspiration tubing assemblies</div>
+          <div class="feature-badge">Custom connector interfaces for urological scopes</div>
+          <div class="feature-badge">Multi-lumen tubing for simultaneous functions</div>
+          <div class="feature-badge">Precision fluid pathway engineering</div>
+        </div>
+      </div>
+
+      <!-- DEVICE CATEGORY 6: CABLE ASSEMBLIES -->
+      <div style="margin-bottom: 0;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 30px; display: flex; align-items: center;">
+          <svg style="width: 28px; height: 28px; margin-right: 12px; color: #1a4d3e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14M9 9l3 3 3-3M9 15l3 3 3-3"/></svg>
+          Cable Assemblies
+        </h3>
+        <div class="devices-grid">
+          <div class="device-card">
+            <div class="device-card-img">
+              <img src="assets/images/products/cable-assembly.png" alt="Cable Assembly" />
+            </div>
+            <div class="device-card-body">
+              <h3>Custom Cable & Harness Solutions</h3>
+              <p>Engineered wire, cable, and tubing assemblies for every medical device application. From single-use to reusable, shielded to coaxial, with 100% electrical test.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-features">
+          <div class="feature-badge">Custom extruded wire, cable, and tubing</div>
+          <div class="feature-badge">Shielded, coaxial, multi-conductor options</div>
+          <div class="feature-badge">Single-use and reusable versions</div>
+          <div class="feature-badge">100% electrical test before shipment</div>
+          <div class="feature-badge">Biocompatible jacketing and shielding</div>
+          <div class="feature-badge">Custom length, color, and termination</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOM VS. OFF-THE-SHELF COMPARISON ===== -->
+  <section class="comparison-section">
+    <div class="comparison-container">
+      <div class="comparison-header">
+        <span class="section-eyebrow">Custom vs. Off-the-Shelf</span>
+        <h2 class="section-title">When to Choose Custom vs. Adapt Existing Standards</h2>
+        <p class="section-desc">A practical guide to help you decide when a custom connector is the right investment for your medical device program.</p>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Consideration</th>
+            <th>Custom Solution (Gii Recommends)</th>
+            <th>Off-the-Shelf Adaptation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-label">Connector Fit</td>
+            <td class="custom-col">Your device geometry requires a unique form factor</td>
+            <td class="ots-col">Standard form factors work with your design</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Contact Count</td>
+            <td class="custom-col">You need 10+ contacts in a tight space</td>
+            <td class="ots-col">Fewer than 10 contacts or standard configurations</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Performance Specs</td>
+            <td class="custom-col">High-voltage, high-frequency, or EMI/RFI immunity is critical</td>
+            <td class="ots-col">Standard electrical performance is sufficient</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Volume & Cost</td>
+            <td class="custom-col">Volume > 10K units/year; custom tooling justified</td>
+            <td class="ots-col">Low-to-medium volume; cost-sensitive</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Biocompatibility</td>
+            <td class="custom-col">Specialized materials or coatings required (e.g., PTFE, PFA)</td>
+            <td class="ots-col">Standard commercial polymers acceptable</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Single-Use Requirement</td>
+            <td class="custom-col">Single-use breakaway or sterilization-integrated design</td>
+            <td class="ots-col">Connector reused across multiple procedures</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Regulatory Strategy</td>
+            <td class="custom-col">Predicate path requires custom solution; 510(k) advantage</td>
+            <td class="ots-col">Leveraging established predicate devices</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Time-to-Market</td>
+            <td class="custom-col">Can absorb 6–9 month engineering & tooling phase</td>
+            <td class="ots-col">Need to launch in < 6 months</td>
+          </tr>
+          <tr>
+            <td class="feature-label">Supply Chain Control</td>
+            <td class="custom-col">Want sole-source, dedicated manufacturing partnership</td>
+            <td class="ots-col">Prefer multi-source, vendor-agnostic components</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 40px; padding: 24px; background: #f0faf8; border-radius: 8px; border-left: 4px solid #1a4d3e;">
+        <p style="margin: 0; color: #333; font-size: 0.95rem; line-height: 1.6;">
+          <strong>Gii's Recommendation:</strong> When in doubt, start with an engineering conversation. We'll help you evaluate cost, timeline, and regulatory implications — then recommend the best path forward, whether that's custom engineering or smart adaptation of existing standards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2>Ready to Build Your Custom Solution?</h2>
+      <p>Tell us what you need to connect, and our engineering team will help you determine the best approach — custom or standard.</p>
+      <a href="index.html#contact" class="btn">Get Your Quote Today</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logos/logo-white.svg" alt="Global Interconnect, Inc." class="footer-logo" />
+          <p>Contract manufacturer of custom medical connectors, cable assemblies, and electromechanical devices for the world's leading medical device OEMs.</p>
+          <div class="footer-certs">
+            <span>FDA Registered</span>
+            <span>ISO 13485</span>
+            <span>ISO 9001</span>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Gii</a></li>
+            <li><a href="index.html#advantage">The Gii Advantage</a></li>
+            <li><a href="index.html#quality">Quality & Certifications</a></li>
+            <li><a href="https://www.globalinterconnect.com/careers/" target="_blank" rel="noopener">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Products & Services</h4>
+          <ul>
+            <li><a href="devices.html">Devices & Products</a></li>
+            <li><a href="capabilities.html">Manufacturing Capabilities</a></li>
+            <li><a href="expertise.html">Industry Expertise</a></li>
+            <li><a href="index.html#resources">Resources & Insights</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="https://www.globalinterconnect.com/understanding-custom-medical-connectors/" target="_blank" rel="noopener">Custom Connectors 101</a></li>
+            <li><a href="https://www.globalinterconnect.com/understanding-medical-cable-assemblies/" target="_blank" rel="noopener">Cable Assembly Guide</a></li>
+            <li><a href="https://www.globalinterconnect.com/design-considerations-single-use-medical-connectors/" target="_blank" rel="noopener">Single-Use Design</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Global Interconnect, Inc. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
